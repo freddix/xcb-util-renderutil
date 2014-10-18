@@ -1,11 +1,11 @@
 Summary:	XCB util-renderutil module
 Name:		xcb-util-renderutil
-Version:	0.3.8
-Release:	3
+Version:	0.3.9
+Release:	1
 License:	MIT
 Group:		Libraries
 Source0:	http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-# Source0-md5:	b346ff598ee093c141f836fbc0f8f721
+# Source0-md5:	468b119c94da910e1291f3ffab91019a
 URL:		http://xcb.freedesktop.org/XcbUtil/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -47,6 +47,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
